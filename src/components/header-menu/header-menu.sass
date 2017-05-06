@@ -1,0 +1,91 @@
+@import "../../config/variables"
+@import "../../config/utils"
+
+.header-panel-section
+  background: $color-main-lighten
+
+.header-panel
+  height: 5 * $point
+  justify-content: space-between
+
+.header-menu
+  display: flex
+  justify-content: flex-end
+  align-items: stretch
+  font-size: 13px
+
+  nav
+    display: flex
+    align-items: stretch
+
+    & a
+      display: flex
+      align-items: center
+      padding: 0 2 * $point
+      @include link-reset
+      @include transition
+
+      &:hover
+        background: rgba(white, .1)
+
+  .menu-parent
+    height: 100%
+    display: flex
+    align-items: stretch
+    cursor: pointer
+    position: relative
+    padding: 0
+
+    &:hover
+      .children
+        top: 100%
+        opacity: 1
+        @include transition
+
+    & > a
+      position: relative
+      z-index: 2
+
+    svg
+      margin-left: 8px
+      margin-bottom: 4px
+
+    .children
+      position: absolute
+      z-index: 1
+      top: 90%
+      left: 0
+      right: 0
+      opacity: 0
+      background: $color-main-lighten
+      @include transition
+
+      & > a
+        height: 5 * $point
+        display: flex
+        align-items: center
+        padding: $point 2 * $point
+
+.header-search
+  position: relative
+
+  input
+    height: 100%
+    width: 90px
+    font-size: 13px
+    padding:
+      left: calc(#{2 * $point} + 1em)
+      right: 2 * $point
+      top: 0
+      bottom: 0
+    @include transition
+
+    &:focus
+      width: 30 * $point
+      background: rgba(white, .1)
+      @include transition
+
+  .icon
+    position: absolute
+    top: 1.5 * $point
+    left: $point

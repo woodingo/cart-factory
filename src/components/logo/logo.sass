@@ -1,0 +1,147 @@
+@import "../../config/variables"
+@import "../../config/utils"
+
+.logo
+  display: flex
+  align-items: center
+
+#logo
+  width: 113px
+  height: 20px
+
+@keyframes rotate
+  0%
+    transform: rotate(0deg)
+
+  100%
+    transform: rotate(360deg)
+
+
+@keyframes rotate-inv
+  0%
+    transform: rotate(0deg)
+
+  100%
+    transform: rotate(-360deg)
+
+
+@keyframes translate-up
+  0%
+    transform: translateY(0px)
+
+  33%
+    transform: translateY(-180px)
+
+  66%
+    transform: translateY(180px)
+
+  100%
+    transform: translateY(0px)
+
+
+@keyframes translate-up-sm
+  0%
+    transform: translateY(0px)
+
+  33%
+    transform: translateY(-30px)
+
+  66%
+    transform: translateY(30px)
+
+  100%
+    transform: translateY(0px)
+
+
+@keyframes translate-down
+  0%
+    transform: translateY(0px)
+
+  33%
+    transform: translateY(180px)
+
+  66%
+    transform: translateY(-180px)
+
+  100%
+    transform: translateY(0px)
+
+
+@keyframes translate-left
+  0%
+    transform: translateX(0px)
+
+  33%
+    transform: translateX(-40px)
+
+  66%
+    transform: translateX(40px)
+
+  100%
+    transform: translateX(0px)
+
+
+@keyframes translate-right
+  0%
+    transform: translateX(0px)
+
+  33%
+    transform: translateX(40px)
+
+  66%
+    transform: translateX(-40px)
+
+  100%
+    transform: translateX(0px)
+
+
+@keyframes translate-mask
+  0%
+    transform: translateX(0px)
+
+  50%
+    transform: translateX(-110px)
+
+  100%
+    transform: translateX(0px)
+
+
+@keyframes translate-y
+  0%
+    transform: translate(0px, 0px)
+
+  33%
+    transform: translate(-58px, 120px)
+
+  66%
+    transform: translate(59px, -120px)
+
+  100%
+    transform: translate(0px, 0px)
+
+
+.play
+  .logo-c
+    animation: rotate 1.5s ease-out
+    transform-origin: 205.142px 358.208px
+  .logo-c-inv
+    animation: rotate-inv 1.5s ease-out
+    transform-origin: 2402.721px 358.208px
+  .logo-a
+    animation: translate-up 1.5s linear
+  .logo-t-vert
+    animation: translate-down 1.5s linear
+  .logo-t-hor
+    animation: translate-left 1.5s linear
+  .logo-r-vert
+    animation: translate-up-sm 1.5s linear
+  .logo-y
+    animation: translate-y 1.5s linear
+  #mask-1, #mask-2
+    animation: translate-mask 1.5s ease-in-out
+
+.color-white
+  fill: white
+
+.color-orange
+  fill: $color-orange

@@ -2,13 +2,13 @@
 
 let gulp = require('gulp'),
     plugins = require('gulp-load-plugins')(),
-    browserSync = require('browser-sync'),
-    reload = browserSync.reload,
+    browserSync = require('browser-sync').create(),
     rimraf = require('rimraf');
 
 let path = {
     build: {
         html: 'build/',
+        icons: 'build/icons/',
         js: 'build/js/',
         css: 'build/css/',
         img: 'build/img/',
@@ -17,7 +17,8 @@ let path = {
 
     src: {
         pug: ['src/*.pug', 'src/pages/**/*.pug'],
-        js: 'src/js/main.js',
+        icons: 'src/icons/*.svg',
+        js: ['src/components/**/*.js', 'src/script.js'],
         style: 'src/**/*.sass',
         img: 'src/img/**/*.*',
         fonts: 'src/fonts/**/*.*'
@@ -25,7 +26,8 @@ let path = {
 
     watch: {
         pug: 'src/**/*.pug',
-        js: 'src/js/**/*.js',
+        icons: 'src/icons/*.svg',
+        js: 'src/**/*.js',
         style: 'src/**/*.sass',
         img: 'src/img/**/*.*',
         fonts: 'src/fonts/**/*.*'
@@ -44,32 +46,42 @@ let config = {
     logPrefix: "Woody_Just"
 };
 
+gulp.task('icons:build', function () {
+    return gulp.src(path.src.icons)
+        .pipe(plugins.svgSprites({mode: "symbols"}))
+        .pipe(gulp.dest(path.build.icons))
+        .pipe(browserSync.stream());
+});
+
 gulp.task('html:build', function () {
     gulp.src(path.src.pug)
         .pipe(plugins.pug())
         .pipe(gulp.dest(path.build.html))
-        .pipe(browserSync.reload({stream: true}));
+        .pipe(browserSync.stream())
 });
 
 gulp.task('js:build', function () {
     gulp.src(path.src.js)
+        .pipe(plugins.include())
+        .pipe(plugins.concat('script.js'))
         .pipe(gulp.dest(path.build.js))
-        .pipe(browserSync.reload({stream: true}));
+        .pipe(browserSync.stream())
 });
 
 gulp.task('style:build', function () {
     gulp.src(path.src.style)
         .pipe(plugins.sass({includePaths: require('node-normalize-scss').includePaths}))
+        .pipe(plugins.concat('style.css'))
         .pipe(plugins.autoprefixer())
         .pipe(plugins.cleanCss({compatibility: '*'}))
         .pipe(gulp.dest(path.build.css))
-        .pipe(browserSync.reload({stream: true}));
+        .pipe(browserSync.stream())
 });
 
 gulp.task('image:build', function () {
     gulp.src(path.src.img)
         .pipe(gulp.dest(path.build.img))
-        .pipe(browserSync.reload({stream: true}));
+        .pipe(browserSync.stream())
 });
 
 gulp.task('fonts:build', function() {
@@ -78,7 +90,10 @@ gulp.task('fonts:build', function() {
 });
 
 gulp.task('watch', function(){
-    gulp.watch([path.watch.pug], function(event, cb) {
+    gulp.watch(path.watch.icons, function (event, cb) {
+        gulp.start('icons:build');
+    });
+    gulp.watch(path.watch.pug, function (event, cb) {
         gulp.start('html:build');
     });
     gulp.watch([path.watch.style], function(event, cb) {
@@ -95,8 +110,16 @@ gulp.task('watch', function(){
     });
 });
 
-gulp.task('webserver', function () {
-    browserSync(config);
+gulp.task('webserver', function() {
+    browserSync.init({
+        server: {
+            baseDir: "./build"
+        },
+        tunnel: true,
+        host: 'localhost',
+        port: 9000,
+        logPrefix: "Woody_Just"
+    });
 });
 
 gulp.task('clean', function (cb) {
@@ -104,6 +127,7 @@ gulp.task('clean', function (cb) {
 });
 
 gulp.task('build', [
+    'icons:build',
     'html:build',
     'js:build',
     'style:build',

@@ -1,0 +1,17 @@
+include ../pug-mixins/_pug-mixins
+.header-panel-section
+  .container.row.header-panel
+    include ../logo/logo
+    .header-menu
+      .header-search
+        +icon('search')
+        input(placeholder="Search" type="search")
+      nav
+        a(href="#") Projects
+        a(href="#") Contact us
+        span.menu-parent
+          a Store
+            +icon('angle-down')
+          .children
+            a(href="#") Add-ons
+            a(href="#") Themes
