@@ -96,7 +96,7 @@ gulp.task('watch', function(){
     gulp.watch(path.watch.pug, function (event, cb) {
         gulp.start('html:build');
     });
-    gulp.watch([path.watch.style], function(event, cb) {
+    gulp.watch(path.watch.style, function(event, cb) {
         gulp.start('style:build');
     });
     gulp.watch([path.watch.js], function(event, cb) {
