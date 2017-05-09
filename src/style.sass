@@ -14,8 +14,10 @@ html
   line-height: 1.3
 
 body
+  color: $color-main
   font:
     family: Lato, sans-serif
+    size: 13px
 
 .container
   max-width: $max-width
@@ -23,9 +25,30 @@ body
 
 // Headers
 
-h1
-  font-size: 44px
-  font-weight: 900
+h1, h2
+  font: 
+    size: 44px
+    weight: 900
+  line-height: 1.3
+  color: $color-main
+  margin: 0
+
+  &:after
+    content: ""
+    display: block
+    width: 54px
+    height: 5px
+    background: $color-orange
+    margin: 24px 0
+
+  &.text-center
+    &:after
+      margin: 24px auto
+
+.subtitle
+  font-size: 16px
+  margin:
+    bottom: 24px
 
 // Forms
 
@@ -60,14 +83,26 @@ textarea
 // Buttons
 
 button
+  position: relative
+  padding: 8px 16px
   border-radius: 0
   border: 0
   background: $color-orange
   color: white
-  padding: 8px 16px
   font-size: 13px
   cursor: pointer
   @include transition
+
+  &:before
+    content: ""
+    display: block
+    background: $color-orange
+    position: absolute
+    top: -8px
+    left: -8px
+    height: 8px
+    width: 8px
+    @include transition
 
   &:focus
     outline: none
@@ -77,8 +112,14 @@ button
     background: lighten($color-orange, 10%)
     @include transition
 
+    &:before
+      top: 0px
+      left: 0px
+      background: lighten($color-orange, 10%)
+      @include transition
+
   &.lg
-    padding: 8px 32px
+    padding: 10px 36px
 
 // Lists
 
@@ -113,3 +154,19 @@ a
   fill: currentColor
   width: 1em
   height: 1em
+
+// Sections
+
+section
+  padding: 48px 0
+
+// Atomic classes
+
+.color-white
+  fill: white
+
+.color-orange
+  fill: $color-orange
+
+.text-center
+  text-align: center
