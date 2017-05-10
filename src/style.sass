@@ -82,7 +82,8 @@ textarea
 
 // Buttons
 
-button
+button,
+.button
   position: relative
   padding: 8px 16px
   border-radius: 0
@@ -90,13 +91,22 @@ button
   background: $color-orange
   color: white
   font-size: 13px
+  line-height: 1
   cursor: pointer
   @include transition
+
+  &.secondary
+    background: $color-main
+
+    &:hover,
+    &:active
+      &:before, &
+        background: lighten($color-main, 10%)
 
   &:before
     content: ""
     display: block
-    background: $color-orange
+    background: inherit
     position: absolute
     top: -8px
     left: -8px

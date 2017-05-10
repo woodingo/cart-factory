@@ -1,27 +1,29 @@
 include ../pug-mixins/_pug-mixins
-section
+section.addons-wrapper
   .container
     h2.text-center Our add-ons
     p.subtitle.text-center Best deals in our store
 
     .addons.row
       .item
-        +icon('plus')
+        +icon('addon-resize')
         h3 Preview resizer
-        button View
+        a.button View
       .item
-        +icon('plus')
-        h3 Preview resizer
-        button View
+        +icon('addon-cart')
+        h3 Fast cart preview
+        a.button View
       .item
-        +icon('plus')
-        h3 Preview resizer
-        button View
+        +icon('addon-search')
+        h3 Fast search
+        a.button View
       .item
-        +icon('plus')
+        +icon('addon-resize')
         h3 Preview resizer
-        button View
+        a.button View
       .item
-        +icon('plus')
-        h3 Preview resizer
-        button View
+        +icon('addon-cart')
+        h3 Fast cart preview
+        a.button View
+
+    a.button.secondary.lg Go to the store

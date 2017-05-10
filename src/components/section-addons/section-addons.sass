@@ -1,7 +1,28 @@
 @import "../../config/variables"
 @import "../../config/utils"
 
+.addons-wrapper
+  text-align: center
+
 .addons
+  margin: 4 * $point 0
+
   .item
     flex: 1
-    text-align: center
+    padding: 4 * $point 0
+    +transition
+
+    &:hover
+      background: lighten($color-main, 70%)
+      +transition
+
+    h3
+      font-weight: 500
+
+    .icon
+      height: $point * 7
+      width: 100%
+
+    &:not(:hover) .button
+      background: none
+      color: lighten($color-main, 30%)
