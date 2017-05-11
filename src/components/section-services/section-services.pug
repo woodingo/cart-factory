@@ -1,4 +1,5 @@
 include ../pug-mixins/_pug-mixins
+include ../service-icons/service-icons
 section.dark.services-wrapper
   .container
     h2.text-center What we can do to you?
@@ -6,7 +7,7 @@ section.dark.services-wrapper
 
     .row.services
       .item
-        +icon('service-dev')
+        +service-icon-dev
         h3.h5 Custom development
       .item
         +icon('service-integration')
