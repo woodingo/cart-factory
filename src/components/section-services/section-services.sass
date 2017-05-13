@@ -11,6 +11,12 @@
   .item
     width: 20%
     opacity: .6
+    padding: 4 * $point 0
+    +transition
+
+    &:hover
+      background: rgba(white, .1)
+      +transition
 
     svg
       width: 8 * $point

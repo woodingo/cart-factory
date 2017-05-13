@@ -1,5 +1,5 @@
 mixin service-icon-dev
-  svg#service-icon-dev(version='1.1', xmlns='http://www.w3.org/2000/svg', viewbox='0 0 48 48')
+  svg.service-icon(version='1.1', xmlns='http://www.w3.org/2000/svg', viewbox='0 0 48 48')
     path(d='M35,35.2H13v-22h22V35.2z M14,34.2h20v-20H14V34.2z')
     path.service-dev-blr(d='M22.4,48h-9.9v-9.9h9.9V48z M13.5,47h7.9v-7.9h-7.9V47z')
     path.service-dev-bl(d='M9.9,48H0v-9.9h9.9V48z M1,47h7.9v-7.9H1V47z')
@@ -7,3 +7,24 @@ mixin service-icon-dev
     path.service-dev-trl(d='M35.2,10.3h-9.9V0.4h9.9V10.3z M26.3,9.3h7.9V1.4h-7.9V9.3z')
     path.service-dev-tr(d='M47.7,10.3h-9.9V0.4h9.9V10.3z M38.9,9.3h7.9V1.4h-7.9V9.3z')
     path.service-dev-trb(d='M47.7,23h-9.9v-9.9h9.9V23z M38.9,22h7.9v-7.9h-7.9V22z')
+
+mixin service-icon-integration
+  svg.service-icon(version='1.1', xmlns='http://www.w3.org/2000/svg', viewbox='0 0 48 48')
+    path(d='M22,48H0V26h22V48z M1,47h20V27H1V47z')
+    path.service-integration-tl(d='M9.9,10.8H0V0.9h9.9V10.8z M1,9.8h7.9V1.9H1V9.8z')
+    path.service-integration-tr(d='M22,10.8h-9.9V0.9H22V10.8z M13.1,9.8H21V1.9h-7.9V9.8z')
+    path.service-integration-rt(d='M47.1,36.2h-9.9v-9.9h9.9V36.2z M38.2,35.2h7.9v-7.9h-7.9V35.2z')
+    path.service-integration-rb(d='M47.1,48h-9.9v-9.9h9.9V48z M38.2,47h7.9v-7.9h-7.9V47z')
+    g
+      polygon.service-icon-integration-arrow(points='5.4,21.5 5.4,12.6 4.4,12.6 4.4,21.5 1.6,18.4 0.8,19.1 4.9,23.5 9,19.1 8.3,18.4 	')
+      polygon.service-icon-integration-arrow(points='17.6,21.5 17.6,12.6 16.6,12.6 16.6,21.5 13.7,18.4 13,19.1 17.1,23.5 21.2,19.1 20.4,18.4 	')
+      polygon.service-icon-integration-arrow(points='25.8,31.2 28.8,28.4 28.2,27.6 23.8,31.7 28.2,35.8 28.8,35.1 25.8,32.2 34.6,32.2 34.6,31.2 	')
+      polygon.service-icon-integration-arrow(points='28.8,40.2 28.2,39.5 23.8,43.5 28.2,47.6 28.8,46.9 25.8,44 34.6,44 34.6,43 25.8,43 	')
+
+mixin service-icon-transfer
+  svg(version='1.1', xmlns='http://www.w3.org/2000/svg', viewbox='0 0 48 48')
+    path.service-icon-transfer-tr(d='M47.3,22.8h-22v-22h22V22.8z M26.3,21.8h20v-20h-20V21.8z')
+    path.service-icon-transfer-bl(d='M23,47H1V25h22V47z M2,46h20V26H2V46z')
+    g
+      polygon.service-icon-transfer-arrow(points='39.8,27.8 38.8,27.8 38.8,37.3 30.3,37.3 33.3,34.4 32.6,33.7 28.3,37.7 32.6,41.8 33.3,41.1 30.3,38.3 39.8,38.3 	')
+      polygon.service-icon-transfer-arrow(points='14.2,5.4 17.2,8.3 7.8,8.3 7.8,18.8 8.8,18.8 8.8,9.3 17.2,9.3 14.2,12.1 14.9,12.9 19.3,8.8 14.9,4.7 	')

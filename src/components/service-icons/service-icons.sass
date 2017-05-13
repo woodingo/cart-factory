@@ -1,21 +1,52 @@
-.play
-  .service-dev-trb
-    animation: 6s service-dev-trb 0s ease-in-out
+.services
 
-  .service-dev-trl
-    animation: 6s service-dev-trl 2s
+  .dev:hover
 
-  .service-dev-tr
-    animation: 6s service-dev-tr 1s
+    .service-dev-trb
+      animation: 6s service-dev-trb 0s ease-in-out
 
-  .service-dev-blt
-    animation: 6s service-dev-blt 0s ease-in-out
+    .service-dev-trl
+      animation: 6s service-dev-trl 2s ease-in-out
 
-  .service-dev-blr
-    animation: 6s service-dev-blr 2s
+    .service-dev-tr
+      animation: 6s service-dev-tr 1s ease-in-out
 
-  .service-dev-bl
-    animation: 6s service-dev-bl 1s
+    .service-dev-blt
+      animation: 6s service-dev-blt 0s ease-in-out
+
+    .service-dev-blr
+      animation: 6s service-dev-blr 2s ease-in-out
+
+    .service-dev-bl
+      animation: 6s service-dev-bl 1s ease-in-out
+
+  .integration:hover
+
+    .service-integration-tl
+      animation: 2s service-integration-tl ease-in-out 1s 2 alternate
+
+    .service-integration-tr
+      animation: 2s service-integration-tr ease-in-out 1s 2 alternate
+
+    .service-integration-rt
+      animation: 2s service-integration-rt ease-in-out 1s 2 alternate
+
+    .service-integration-rb
+      animation: 2s service-integration-rb ease-in-out 1s 2 alternate
+
+    .service-icon-integration-arrow
+      animation: 6s service-icon-integration-arrow
+
+  .transfer:hover
+
+    .service-icon-transfer-tr
+      animation: 2s service-icon-transfer-tr 1s
+
+    .service-icon-transfer-bl
+      animation: 2s service-icon-transfer-bl 1s
+
+    .service-icon-transfer-arrow
+      animation: 4s service-icon-transfer-arrow
 
 @keyframes service-dev-trb
   0%
@@ -39,7 +70,6 @@
   100%
     transform: translate(0, 0)
 
-
 @keyframes service-dev-trl
   0%
     transform: translate(0, 0)
@@ -62,7 +92,6 @@
   100%
     transform: translate(0, 0)
 
-
 @keyframes service-dev-tr
   0%
     transform: translate(0, 0)
@@ -78,7 +107,6 @@
 
   100%
     transform: translate(0, 0)
-
 
 @keyframes service-dev-blt
   0%
@@ -102,7 +130,6 @@
   100%
     transform: translate(0, 0)
 
-
 @keyframes service-dev-blr
   0%
     transform: translate(0, 0)
@@ -125,7 +152,6 @@
   100%
     transform: translate(0, 0)
 
-
 @keyframes service-dev-bl
   0%
     transform: translate(0, 0)
@@ -141,3 +167,102 @@
 
   100%
     transform: translate(0, 0)
+
+@keyframes service-integration-rt
+  0%
+    transform: translate(0, 0)
+
+  75%
+    transform: translate(-37px, 0)
+
+  100%
+    transform: translate(-37px, 0)
+
+@keyframes service-integration-rb
+  0%
+    transform: translate(0, 0)
+
+  75%
+    transform: translate(-25px, 0)
+
+  100%
+    transform: translate(-25px, 0)
+
+@keyframes service-integration-tl
+  0%
+    transform: translate(0, 0)
+
+  75%
+    transform: translate(0, 37px)
+
+  100%
+    transform: translate(0, 37px)
+
+@keyframes service-integration-tr
+  0%
+    transform: translate(0, 0)
+
+  75%
+    transform: translate(0, 25px)
+
+  100%
+    transform: translate(0, 25px)
+
+@keyframes service-icon-integration-arrow
+  0%
+    opacity: 1
+
+  25%
+    opacity: 0
+
+  75%
+    opacity: 0
+
+  100%
+    opacity: 1
+
+@keyframes service-icon-transfer-arrow
+  0%
+    opacity: 1
+
+  25%
+    opacity: 0
+
+  75%
+    opacity: 0
+
+  100%
+    opacity: 1
+
+@keyframes service-icon-transfer-tr
+  0%
+    transform: translate(0, 0)
+
+  25%
+    transform: translate(0, 24px)
+
+  50%
+    transform: translate(-24px, 24px)
+
+  75%
+    transform: translate(-24px, 0)
+
+  100%
+    transform: translate(0, 0)
+
+@keyframes service-icon-transfer-bl
+  0%
+    transform: translate(0, 0)
+
+  25%
+    transform: translate(0, -24px)
+
+  50%
+    transform: translate(24px, -24px)
+
+  75%
+    transform: translate(24px, 0)
+
+  100%
+    transform: translate(0, 0)
+  
