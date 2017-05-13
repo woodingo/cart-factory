@@ -1,7 +1,8 @@
 @mixin font-face($name, $path, $weight: null, $style: null)
 	@font-face
 		font-family: quote($name)
-		src: url('../fonts/' + $path + '.woff2') format('woff2'), url($path + '.woff') format('woff')
+		src: url('../fonts/' + $path + '.eot')
+		src: url('../fonts/' + $path + '.eot?#iefix') format('embedded-opentype'), url('../fonts/' + $path + '.woff2') format('woff2'), url($path + '.woff') format('woff')
 		font-style: $style
 		font-weight: $weight
     text-rendering: optimizeLegibility

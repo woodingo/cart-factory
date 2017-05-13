@@ -1,7 +1,7 @@
 include ../pug-mixins/_pug-mixins
 .header-panel-section
   .container.row.header-panel
-    #top-panel-logo.top-panel-logo
+    a#top-panel-logo.top-panel-logo(href="/")
       include ../logo/logo
     .header-menu
       .burger-tumblr
@@ -12,7 +12,7 @@ include ../pug-mixins/_pug-mixins
         input(placeholder="Search" type="search")
       nav
         a(href="#") Projects
-        a(href="#") Contact us
+        a(href='#mail-modal', data-modal-open='') Contact us
         span.menu-parent
           a Store
             +icon('angle-down')

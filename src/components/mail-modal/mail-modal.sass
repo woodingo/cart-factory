@@ -1,0 +1,91 @@
+@import "../../config/variables"
+@import "../../config/utils"
+
+.modal
+  display: none
+
+.vanilla-modal
+  .modal
+    display: flex
+    justify-content: center
+    align-items: center
+    position: fixed
+    content: ""
+    top: 0
+    left: 0
+    right: 0
+    bottom: 0
+    background: rgba(black, 0.6)
+    z-index: -1
+    opacity: 0
+    transition: opacity 0.2s, z-index 0s 0.2s
+    overflow: hidden
+    overflow-y: auto
+    white-space: nowrap
+
+  &.modal-visible .modal
+    z-index: 99
+    opacity: 1
+    transition: opacity 0.2s
+
+$closer-size: 3 * $point
+
+.modal-inner
+  max-width: 50 * $point
+  width: 100%
+  margin: 0 $closer-size * 1.5
+  max-height: 90%
+  background: white
+  padding: 5 * $point 3 * $point
+  z-index: -1
+  opacity: 0
+  transform: scale(0)
+  transition: opacity 0.2s, transform 0.2s, z-index 0s 0.2s
+
+.modal-visible .modal-inner
+  z-index: 100
+  opacity: 1
+  transform: scale(1)
+  transition: opacity 0.2s, transform 0.2s
+
+[data-modal-close]
+  position: absolute
+  display: flex
+  justify-content: center
+  align-items: center
+  z-index: 2
+  right: -$closer-size
+  top: -$closer-size
+  width: $closer-size
+  height: $closer-size
+  font-size: 13px
+  cursor: pointer
+  text-align: center
+  background: $color-orange
+  color: white
+
+.mail-form
+  width: 100%
+  text-align: center
+
+  h2
+    &:after
+      margin: 2 * $point auto
+
+  .subtitle a
+    +link-reset
+
+  input, textarea
+    display: block
+    font-size: 16px
+    margin: 0 auto
+    width: 100%
+    margin:
+      bottom: 2 * $point
+
+  textarea
+    height: 36px
+
+  button
+    margin:
+      top: 4 * $point

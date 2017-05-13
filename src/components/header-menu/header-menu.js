@@ -1,6 +1,6 @@
 var headerMenu = document.querySelectorAll('.header-menu')[0];
 var burgerTumblr = document.querySelectorAll('.burger-tumblr')[0];
-var openMenu = () => {
+var openMenu = function() {
   headerMenu.classList.toggle('open');
 }
 

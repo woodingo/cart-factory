@@ -21,5 +21,8 @@
     "gulp-svg-sprites": "^4.1.1",
     "node-normalize-scss": "^3.0.0",
     "rimraf": "^2.6.1"
+  },
+  "dependencies": {
+    "vanilla-modal": "^1.6.4"
   }
 }

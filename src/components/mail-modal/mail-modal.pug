@@ -1,0 +1,16 @@
+#mail-modal(style='display:none')
+  .mail-form
+    h2 Contact us
+    p.subtitle
+      a(href="info@cart-factory.com") info@cart-factory.com
+    form
+      input(type='email' placeholder='Your email')
+      input(type='text' placeholder='Your name')
+      textarea(placeholder='Your comment')
+      button.lg Send message
+
+.modal
+  .modal-inner
+    span(data-modal-close='')
+      +icon('close')
+    .modal-content

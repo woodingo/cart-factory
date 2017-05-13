@@ -22,7 +22,7 @@ body
 .container
   max-width: $max-width
   margin: 0 auto
-  padding: 0 2 * $point
+  padding: 0 4 * $point
 
 // Headers
 
@@ -33,6 +33,9 @@ h1, h2
   line-height: 1.3
   color: $color-main
   margin: 0
+  +mobile
+    font:
+      size: 36px
 
   &:after
     content: ""
@@ -75,11 +78,18 @@ textarea
 [type='number'],
 textarea
   background: none
+  display: block
   border: none
   color: inherit
+  padding: $point 0
+  resize: vertical
+  border:
+    bottom:  1px solid $color-main
 
   &:focus
     outline: none
+    border:
+      color: $color-orange
 
   &::placeholder
     color: inherit
@@ -100,7 +110,8 @@ button,
   line-height: 1
   cursor: pointer
   white-space: nowrap
-  @include transition
+  text-decoration: none
+  +transition
 
   &.secondary
     background: $color-main

@@ -1,0 +1,25 @@
+@import "../../config/variables"
+@import "../../config/utils"
+
+.preloader
+  display: none
+  opacity: 1
+  position: fixed
+  z-index: 10000
+  top: 0
+  bottom: 0
+  right: 0
+  left: 0
+  background: $color-main
+  justify-content: center
+  align-items: center
+
+  &.show
+    display: flex
+
+  &.hide
+    opacity: 0
+    +transition
+
+  .logo
+    width: 240px

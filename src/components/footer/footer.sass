@@ -14,6 +14,8 @@
   flex-wrap: nowrap
   border:
     bottom: 1px solid rgba(white, .2)
+  +mobile
+    display: block
 
   .logo
     width: 153px
@@ -23,12 +25,16 @@
 .footer-menu
   padding: 0 3 * $point
   flex-basis: 100%
+  +mobile
+    padding: 3 * $point 0
 
   a
     +link-reset
     +transition
     display: inline-block
     padding: $point 2 * $point
+    +mobile
+      display: block
 
     &:hover
       background:
