@@ -23,6 +23,7 @@
     "rimraf": "^2.6.1"
   },
   "dependencies": {
+    "rellax": "^1.0.0",
     "vanilla-modal": "^1.6.4"
   }
 }
