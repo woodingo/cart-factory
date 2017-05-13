@@ -1,0 +1,46 @@
+@import "../../config/variables"
+@import "../../config/utils"
+
+.footer
+  padding:
+    bottom: 4 * $point
+  background:
+    color: $color-main
+  color: white
+
+.footer-panel
+  padding: 2 * $point 0
+  align-items: center
+  flex-wrap: nowrap
+  border:
+    bottom: 1px solid rgba(white, .2)
+
+  .logo
+    width: 153px
+    height: 31px
+    flex-shrink: 0
+
+.footer-menu
+  padding: 0 3 * $point
+  flex-basis: 100%
+
+  a
+    +link-reset
+    +transition
+    display: inline-block
+    padding: $point 2 * $point
+
+    &:hover
+      background:
+        color: rgba(white, .1)
+      +transition
+
+.site-meta
+  color: rgba(white, .5)
+  font:
+    size: 12px
+  margin: 2 * $point 0
+
+  span + span
+    margin:
+      left: $point

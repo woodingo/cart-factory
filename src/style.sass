@@ -22,6 +22,7 @@ body
 .container
   max-width: $max-width
   margin: 0 auto
+  padding: 0 2 * $point
 
 // Headers
 
@@ -98,6 +99,7 @@ button,
   font-size: 13px
   line-height: 1
   cursor: pointer
+  white-space: nowrap
   @include transition
 
   &.secondary
@@ -158,6 +160,7 @@ a
 // Grid
 
 .row
+  position: relative
   display: flex
   flex-wrap: wrap
   align-items: stretch

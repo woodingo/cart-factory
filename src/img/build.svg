@@ -3,9 +3,9 @@
   <style type="text/css">
     .st0{fill:none;}
     .st1{fill:#2B3E50;}
-    .st2{fill:#4e5d6c; stroke: none;}
+    .st2{fill:white; stroke: none;}
     .pic {
-      stroke: #4e5d6c;
+      stroke: white;
       stroke-width: 1;
       width: 320px;
     }

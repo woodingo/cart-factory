@@ -1,0 +1,31 @@
+@import "../../config/variables"
+@import "../../config/utils"
+
+.quotes
+  max-width: 47 * $point
+  margin: 5 * $point auto
+  font:
+    weight: 600
+
+  .item
+    display: flex
+    align-items: flex-end
+    margin:
+      bottom: 4 * $point
+
+    .name
+      padding:
+        top: 2 * $point
+      margin:
+        bottom: 0
+      border-top: 1px solid $color-main
+      font-weight: 800
+
+    .icon
+      flex-shrink: 0
+      margin-left: $point
+      fill: white
+      stroke: $color-main
+      stroke-width: 1px
+      height: 5 * $point
+      width: 5 * $point

@@ -8,22 +8,61 @@
   height: 5 * $point
   justify-content: space-between
 
+.top-panel-logo
+  width: 113px
+  display: flex
+  align-items: center
+
+  .logo
+    width: 100%
+    height: 50%
+
 .header-menu
   display: flex
+  max-height: 5 * $point
   justify-content: flex-end
   align-items: stretch
   font-size: 13px
+  +transition
+  +mobile
+    display: block
+    overflow: hidden
+    box-sizing: border-box
+    width: 50vw
+    z-index: 10
+    position: absolute
+    top: 0
+    right: 0
+    background: lighten($color-main, 10%)
+
+  &.open
+    max-height: 100vh
+
+    .burger-tumblr
+      background: 
+        color: rgba(white, .1)
+
+      .bars
+        display: none
+
+      .close
+        display: inline-block
+
 
   nav
     display: flex
     align-items: stretch
+    +mobile
+      display: block
 
     & a
       display: flex
       align-items: center
       padding: 0 2 * $point
-      @include link-reset
-      @include transition
+      +link-reset
+      +transition
+      +mobile
+        padding: $point
 
       &:hover
         background: rgba(white, .1)
@@ -35,12 +74,15 @@
     cursor: pointer
     position: relative
     padding: 0
+    +mobile
+      display: block
+      height: auto
 
     &:hover
       .children
         top: 100%
         opacity: 1
-        @include transition
+        +transition
 
     & > a
       position: relative
@@ -58,13 +100,23 @@
       right: 0
       opacity: 0
       background: $color-main-lighten
-      @include transition
+      +transition
+      +mobile
+        opacity: 1
+        position: static
 
       & > a
         height: 5 * $point
         display: flex
         align-items: center
         padding: $point 2 * $point
+        +mobile
+          padding:
+            left: 2 * $point
+            right: $point
+            top: $point
+            bottom: $point
+          height: auto
 
 .header-search
   position: relative
@@ -78,14 +130,41 @@
       right: 2 * $point
       top: 0
       bottom: 0
-    @include transition
+    +transition
+    +mobile
+      width: 100%
+      padding:
+        left: 4 * $point
+        top: $point
+        bottom: $point
 
     &:focus
       width: 30 * $point
       background: rgba(white, .1)
-      @include transition
+      +transition
+      +mobile
+        width: 100%
 
   .icon
     position: absolute
     top: 1.5 * $point
     left: $point
+    +mobile
+      top: $point
+
+.burger-tumblr
+  padding: 0 2 * $point
+  height: 5 * $point
+  align-items: center
+  cursor: pointer
+  display: none
+  justify-content: flex-end
+
+  .bars
+    display: inline-block
+
+  .close
+    display: none
+
+  +mobile
+    display: flex

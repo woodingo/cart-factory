@@ -1,8 +1,12 @@
 include ../pug-mixins/_pug-mixins
 .header-panel-section
   .container.row.header-panel
-    include ../logo/logo
+    #top-panel-logo.top-panel-logo
+      include ../logo/logo
     .header-menu
+      .burger-tumblr
+        +icon('bars')
+        +icon('close')
       .header-search
         +icon('search')
         input(placeholder="Search" type="search")
