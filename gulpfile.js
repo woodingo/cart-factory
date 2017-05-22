@@ -12,7 +12,8 @@ let path = {
         js: 'build/js/',
         css: 'build/css/',
         img: 'build/img/',
-        fonts: 'build/fonts/'
+        fonts: 'build/fonts/',
+        favicons: 'build/favicons/'
     },
 
     src: {
@@ -21,7 +22,8 @@ let path = {
         js: 'src/script.js',
         style: 'src/**/*.sass',
         img: 'src/img/**/*.*',
-        fonts: 'src/fonts/**/*.*'
+        fonts: 'src/fonts/**/*.*',
+        favicons: 'src/favicons/**/*.*'
     },
 
     watch: {
@@ -89,6 +91,11 @@ gulp.task('fonts:build', function() {
         .pipe(gulp.dest(path.build.fonts))
 });
 
+gulp.task('favicons:build', function() {
+    gulp.src(path.src.favicons)
+        .pipe(gulp.dest(path.build.favicons))
+});
+
 gulp.task('watch', function(){
     gulp.watch(path.watch.icons, function (event, cb) {
         gulp.start('icons:build');
@@ -132,7 +139,8 @@ gulp.task('build', [
     'js:build',
     'style:build',
     'fonts:build',
-    'image:build'
+    'image:build',
+    'favicons:build'
 ]);
 
 gulp.task('default', ['build', 'webserver', 'watch']);
